@@ -3,192 +3,874 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Loja Online - Produtos com Preço</title>
+    <title>Video Games Classicos</title>
     <style>
-        /* Estilos gerais */
+        /* Estilos Globais */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         body {
             font-family: Arial, sans-serif;
-            margin: 0;
             background-color: #f4f4f4;
+            color: #333;
         }
 
-        /* Cabeçalho */
+        h1, h2, h3 {
+            color: #5a2d3d;
+        }
+
+        /* Barra de Navegação */
         header {
-            background-color: #333;
-            color: white;
-            text-align: center;
-            padding: 20px 0;
+            background-color: #3e1c28;
+            padding: 10px 0;
         }
 
-        header h1 {
-            margin: 0;
-            font-size: 2.5em;
-        }
-
-        /* Barra de navegação */
         nav {
-            background-color: #444;
             display: flex;
-            justify-content: center;
-            padding: 10px;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
         }
 
-        nav a {
+        nav .logo h1 {
             color: white;
+            font-size: 24px;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+        }
+
+        .nav-links li {
+            margin-left: 20px;
+        }
+
+        .nav-links a {
             text-decoration: none;
-            padding: 10px 20px;
-            margin: 0 15px;
-            font-size: 1.2em;
+            color: white;
+            font-size: 18px;
         }
 
-        nav a:hover {
-            background-color: #555;
+        .nav-links a:hover {
+            color: #ffcb9f;
         }
 
-        /* Conteúdo principal */
-        .main-content {
+        /* Seção de Produtos */
+        .produtos {
+            text-align: center;
+            padding: 50px 20px;
+        }
+
+        .produto-lista {
             display: flex;
             justify-content: center;
+            gap: 30px;
             flex-wrap: wrap;
-            padding: 20px;
         }
 
-        .product {
-            display: inline-block;
+        .produto {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 250px;
+            padding: 20px;
             text-align: center;
-            margin: 20px;
-            padding: 20px;
-            background-color: #fff;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            width: 280px;
-            transition: transform 0.3s ease-in-out;
         }
 
-        .product img {
+        .produto img {
             width: 100%;
-            height: 200px;
-            object-fit: cover;
+            height: auto;
             border-radius: 8px;
         }
 
-        .product h2 {
+        .produto h3 {
+            font-size: 20px;
             margin: 10px 0;
-            font-size: 1.2em;
         }
 
-        .price {
-            font-size: 1.5em;
-            color: #4caf50;
-            margin-top: 10px;
-            font-weight: bold;
+        .produto p {
+            font-size: 18px;
+            color: #d35400;
+            margin-bottom: 20px;
         }
 
-        /* Efeitos de hover nas imagens */
-        .product:hover {
-            transform: translateY(-10px);
+        .produto button {
+            padding: 10px 20px;
+            background-color: #5a2d3d;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .produto button:hover {
+            background-color: #c0392b;
         }
 
         /* Rodapé */
         footer {
-            background-color: #333;
+            background-color: #3e1c28;
             color: white;
+            padding: 20px;
             text-align: center;
-            padding: 15px 0;
-            position: fixed;
-            width: 100%;
-            bottom: 0;
         }
 
-        /* Responsividade */
-        @media (max-width: 768px) {
-            .product {
-                width: 45%;
-            }
+        footer .footer-content p {
+            font-size: 14px;
         }
-
-        @media (max-width: 480px) {
-            .product {
-                width: 100%;
-            }
-        }
-
     </style>
 </head>
 <body>
-
-    <!-- Cabeçalho -->
+    <!-- Barra de Navegação -->
     <header>
-        <h1>Minha Loja Online</h1>
-        <p>Os melhores produtos com os melhores preços!</p>
+        <nav>
+            <div class="logo">
+                <h1>Revolução de jogos!</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home">Início</a></li>
+                <li><a href="#produtos">Produtos</a></li>
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+        </nav>
     </header>
 
-    <!-- Barra de navegação -->
-    <nav>
-        <a href="#">Home</a>
-        <a href="#">Produtos</a>
-        <a href="#">Promoções</a>
-        <a href="#">Contato</a>
-    </nav>
+    <!-- Seção de Produtos -->
+    <section id="produtos" class="produtos">
+        <h2>Produtos</h2>
+        <div class="produto-lista">
+            <div class="produto">
+                <img src="https://http2.mlstatic.com/D_NQ_NP_2X_744227-MLU78249092264_082024-F.webp" alt="Perfume 1">
+                <h3>Xbox 360</h3>
+                <p>R$ 1.299,00</p>
+                <button>Comprar</button>
+            </div>
+            <div class="produto">
+                <img src="https://m.media-amazon.com/images/I/61iy7b0-r6L._AC_UL480_FMwebp_QL65_.jpg" alt="Perfume 2">
+                <h3>Atari Flashback 12 Gold</h3>
+                <p>R$ 1.995,95</p>
+                <button>Comprar</button>
+            </div>
+            <div class="produto">
+                <img src="https://http2.mlstatic.com/D_Q_NP_2X_923834-MLB83154342338_032025-E-ps3-playstation-3-45-jogos-2-controles-garantia-nf-e-gta5-fifa-minecraft-pes-god-of-war-the-last-of-us-mortal-komkat-need-for-speed.webp" alt="Perfume 3">
+                <h3>PlayStaion 3</h3>
+                <p>R$ 1.244,98</p>
+                <button>Comprar</button>
+            </div>
+        </div>
+    </section>
 
-    <!DOCTYPE html>
-    <html lang="pt-br">
-    <head>
-        <!DOCTYPE html>
-        <html lang="pt-br">
-        <head>
-            <meta charset="UTF-8">
-            <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <title>Exemplo de Cor Verde</title>
-            <style>
-                body {
-                    font-family: Arial, sans-serif;
-                    background-color: #f4f4f4;
-                    color: #333;
-                }
-        
-                h1 {
-                    color: green; /* Usando a cor verde para o título */
-                }
-        
-                .product {
-                    background-color: #e0f7e0; /* Fundo verde claro */
-                    border: 1px solid #4caf50; /* Borda verde escuro */
-                    padding: 15px;
-                    margin: 20px;
-                    border-radius: 8px;
-                }
-        
-                .price {
-                    font-size: 1.5em;
-                    color: #388e3c; /* Verde escuro para o preço */
-                    font-weight: bold;
-                }
-        
-                .product:hover {
-                    background-color: #c8e6c9; /* Efeito de hover com verde mais suave */
-                }
-            </style>
-        </head>
-        <body>
-        
-            <h1>Produtos com Preço</h1>
-        
-            <div class="product">
-                <h2>Produto 1</h2>
-                <p class="price">R$ 268,99</p>
+    <!-- Rodapé -->
+    <footer>
+        <div class="footer-content">
+            <p>&copy; Venha Viver a Vida do jogos com nos!.</p>
+        </div>
+    </footer>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogos Revolucionario!</title>
+    <style>
+        /* Estilos Globais */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        h1, h2, h3 {
+            color: #5a2d3d;
+        }
+
+        /* Barra de Navegação */
+        header {
+            background-color: #3e1c28;
+            padding: 10px 0;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+        nav .logo h1 {
+            color: white;
+            font-size: 24px;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+        }
+
+        .nav-links li {
+            margin-left: 20px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: white;
+            font-size: 18px;
+        }
+
+        .nav-links a:hover {
+            color: #ffcb9f;
+        }
+
+        /* Seção de Produtos */
+        .produtos {
+            text-align: center;
+            padding: 50px 20px;
+        }
+
+        .produto-lista {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .produto {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 250px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .produto img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        .produto h3 {
+            font-size: 20px;
+            margin: 10px 0;
+        }
+
+        .produto p {
+            font-size: 18px;
+            color: #d35400;
+            margin-bottom: 20px;
+        }
+
+        .produto button {
+            padding: 10px 20px;
+            background-color: #5a2d3d;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .produto button:hover {
+            background-color: #c0392b;
+        }
+
+        /* Rodapé */
+        footer {
+            background-color: #3e1c28;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        footer .footer-content p {
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Barra de Navegação -->
+    <header>
+        <nav>
+            <div class="logo">
+                <h1>Venha viver a Vida de jogos Nós!</h1>
             </div>
-        
-            <div class="product">
-                <h2>Produto 2</h2>
-                <p class="price">R$ 46,99</p>
+            <ul class="nav-links">
+                <li><a href="#home">Início</a></li>
+                <li><a href="#produtos">Produtos</a></li>
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Seção de Produtos -->
+    <section id="produtos" class="produtos">
+        <h2>Produtos</h2>
+        <div class="produto-lista">
+            <div class="produto">
+                <img src="https://m.media-amazon.com/images/I/61F0F59-kUL._AC_UL480_FMwebp_QL65_.jpg" alt="Perfume 1">
+                <h3>Maquina De Fliperama 40'Polegadas</h3>
+                <p>R$ 614,50</p>
+                <button>Comprar</button>
             </div>
-        
-            <div class="product">
-                <h2>Produto 3</h2>
-                <p class="price">R$ 1.598,96</p>
+            <div class="produto">
+                <img src="https://m.media-amazon.com/images/I/61bvBCSda0L._AC_UL480_FMwebp_QL65_.jpg" alt="Perfume 2">
+             <h3>Sony PlayStaion Classic</h3>
+                <p>R$ 1.100,00</p>
+                <button>Comprar</button>
             </div>
-        
-        </body>
-        </html>
-        
+            <div class="produto">
+                <img src="https://th.bing.com/th/id/R.eab860621354298822aa00ff95df7e9b?rik=HIACXADVcI8vOg&pid=ImgRaw&r=0" alt="Perfume 3">
+                <h3>Nitendo Super NES</h3>
+                <p>R$ 1.120,00</p>
+                <button>Comprar</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Rodapé -->
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2025 Vai ser seu Futuro Dos Jogos!.</p>
+        </div>
+    </footer>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Venha ver os Videos Games que você quer!</title>
+    <style>
+        /* Estilos Globais */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        h1, h2, h3 {
+            color: #5a2d3d;
+        }
+
+        /* Barra de Navegação */
+        header {
+            background-color: #3e1c28;
+            padding: 10px 0;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+        nav .logo h1 {
+            color: white;
+            font-size: 24px;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+        }
+
+        .nav-links li {
+            margin-left: 20px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: white;
+            font-size: 18px;
+        }
+
+        .nav-links a:hover {
+            color: #ffcb9f;
+        }
+
+        /* Seção de Produtos */
+        .produtos {
+            text-align: center;
+            padding: 50px 20px;
+        }
+
+        .produto-lista {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .produto {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 250px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .produto img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        .produto h3 {
+            font-size: 20px;
+            margin: 10px 0;
+        }
+
+        .produto p {
+            font-size: 18px;
+            color: #d35400;
+            margin-bottom: 20px;
+        }
+
+        .produto button {
+            padding: 10px 20px;
+            background-color: #5a2d3d;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .produto button:hover {
+            background-color: #c0392b;
+        }
+
+        /* Rodapé */
+        footer {
+            background-color: #3e1c28;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        footer .footer-content p {
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Barra de Navegação -->
+    <header>
+        <nav>
+            <div class="logo">
+                <h1>Futuro Dos Games na Socieadade!</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home">Início</a></li>
+                <li><a href="#produtos">Produtos</a></li>
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Seção de Produtos -->
+    <section id="produtos" class="produtos">
+        <h2>Produtos</h2>
+        <div class="produto-lista">
+            <div class="produto">
+                <img src="https://gmedia.playstation.com/is/image/SIEPDC/ps4-slim-image-block-01-en-24jul20?$1600px--t$" alt="Perfume 1">
+                <h3>PlayStaion 4</h3>
+                <p>R$ 2.328,00</p>
+                <button>Comprar</button>
+            </div>
+            <div class="produto">
+                <img src="https://m.media-amazon.com/images/I/61dl6zqKgWL._AC_UL480_FMwebp_QL65_.jpg" alt="Perfume 2">
+                <h3>Nitendo Switch</h3>
+                <p>R$ 1.975,00</p>
+                <button>Comprar</button>
+            </div>
+            <div class="produto">
+                <img src="https://http2.mlstatic.com/D_Q_NP_2X_906664-MLU78666856504_092024-E.webp" alt="Perfume 3">
+                <h3>Xbox Series S</h3>
+                <p>R$ 2.902,75</p>
+                <button>Comprar</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Rodapé -->
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2025 Venha ver o futuro dos games e antigos!.</p>
+        </div>
+    </footer>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Games a Vista</title>
+    <style>
+        /* Estilos Globais */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        h1, h2, h3 {
+            color: #5a2d3d;
+        }
+
+        /* Barra de Navegação */
+        header {
+            background-color: #3e1c28;
+            padding: 10px 0;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+        nav .logo h1 {
+            color: white;
+            font-size: 24px;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+        }
+
+        .nav-links li {
+            margin-left: 20px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: white;
+            font-size: 18px;
+        }
+
+        .nav-links a:hover {
+            color: #ffcb9f;
+        }
+
+        /* Seção de Produtos */
+        .produtos {
+            text-align: center;
+            padding: 50px 20px;
+        }
+
+        .produto-lista {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .produto {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 250px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .produto img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        .produto h3 {
+            font-size: 20px;
+            margin: 10px 0;
+        }
+
+        .produto p {
+            font-size: 18px;
+            color: #d35400;
+            margin-bottom: 20px;
+        }
+
+        .produto button {
+            padding: 10px 20px;
+            background-color: #5a2d3d;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .produto button:hover {
+            background-color: #c0392b;
+        }
+
+        /* Rodapé */
+        footer {
+            background-color: #3e1c28;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        footer .footer-content p {
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Barra de Navegação -->
+    <header>
+        <nav>
+            <div class="logo">
+                <h1>Super Video Games!</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home">Início</a></li>
+                <li><a href="#produtos">Produtos</a></li>
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Seção de Produtos -->
+    <section id="produtos" class="produtos">
+        <h2>Produtos</h2>
+        <div class="produto-lista">
+            <div class="produto">
+                <img src="https://img.olx.com.br/images/46/463543494293535.webp" alt="Perfume 1">
+                <h3>Super Nitendo</h3>
+                <p>R$ 347,94</p>
+                <button>Comprar</button>
+            </div>
+            <div class="produto">
+                <img src="https://http2.mlstatic.com/D_Q_NP_2X_779268-MLU72994271361_112023-E.webp" alt="Perfume 2">
+                <h3>PlayStaion 2</h3>
+                <p>R$ 588,00</p>
+                <button>Comprar</button>
+            </div>
+            <div class="produto">
+                <img src="https://m.media-amazon.com/images/I/71kgs5QnZiL._AC_UL480_FMwebp_QL65_.jpg" alt="Perfume 3">
+                <h3>Game Boy Advance</h3>
+                <p>R$ 570,48</p>
+                <button>Comprar</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Rodapé -->
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2025 Videos Games e Jogos na promoçao!!.</p>
+        </div>
+    </footer>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Videos Games</title>
+    <style>
+        /* Estilos Globais */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        h1, h2, h3 {
+            color: #5a2d3d;
+        }
+
+        /* Barra de Navegação */
+        header {
+            background-color: #3e1c28;
+            padding: 10px 0;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+        nav .logo h1 {
+            color: white;
+            font-size: 24px;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+        }
+
+        .nav-links li {
+            margin-left: 20px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: white;
+            font-size: 18px;
+        }
+
+        .nav-links a:hover {
+            color: #ffcb9f;
+        }
+
+        /* Seção de Produtos */
+        .produtos {
+            text-align: center;
+            padding: 50px 20px;
+        }
+
+        .produto-lista {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .produto {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 250px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .produto img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        .produto h3 {
+            font-size: 20px;
+            margin: 10px 0;
+        }
+
+        .produto p {
+            font-size: 18px;
+            color: #d35400;
+            margin-bottom: 20px;
+        }
+
+        .produto button {
+            padding: 10px 20px;
+            background-color: #5a2d3d;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .produto button:hover {
+            background-color: #c0392b;
+        }
+
+        /* Rodapé */
+        footer {
+            background-color: #3e1c28;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        footer .footer-content p {
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Barra de Navegação -->
+    <header>
+        <nav>
+            <div class="logo">
+                <h1>Videos Games</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home">Início</a></li>
+                <li><a href="#produtos">Produtos</a></li>
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Seção de Produtos -->
+    <section id="produtos" class="produtos">
+        <h2>Produtos</h2>
+        <div class="produto-lista">
+            <div class="produto">
+                <img src="https://http2.mlstatic.com/D_Q_NP_2X_881003-MLB82959743772_032025-E-nintendo-game-boy-color-backlight-oled-touch.webp" alt="Perfume 1">
+                <h3>Game Boy Color</h3>
+                <p>R$ 167,00</p>
+                <button>Comprar</button>
+            </div>
+            <div class="produto">
+                <img src="https://http2.mlstatic.com/D_NQ_NP_2X_835247-MLB79418888519_092024-F-video-game-nintendo-game-cube-picoboot-sdcard-256gb.webp" alt="Perfume 2">
+                <h3>Game Cube</h3>
+                <p>R$ 176,98</p>
+                <button>Comprar</button>
+            </div>
+            <div class="produto">
+                <img src="https://http2.mlstatic.com/D_Q_NP_2X_768394-MLA32731593120_112019-E.webp" alt="Perfume 3">
+                <h3>Nitendo DS</h3>
+                <p>R$ 730,67</p>
+                <button>Comprar</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Rodapé -->
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2025 Video games para você e seus amigos!.</p>
+        </div>
+    </footer>
+</body>
+</html>
+
