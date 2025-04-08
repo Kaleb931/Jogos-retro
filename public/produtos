@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loja de Video Games</title>
+    <link rel="stylesheet" href="css/styles.css"> <!-- Certifique-se de que o caminho do CSS está correto -->
+</head>
+<body>
+
+    <!-- Cabeçalho e Navegação -->
+    <header>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="inicio.html">Início</a></li>
+                <li><a href="produtos.html">Produtos</a></li>
+                <li><a href="sobre.html">Sobre</a></li>
+                <li><a href="contato.html">Contato</a></li>
+            </ul>
+        </nav>
+        <h1>Loja de Video Games</h1>
+    </header>
+
+    <!-- Seção Produtos -->
+    <section id="produtos" class="produto-lista">
+        <h2>Produtos</h2>
+        <div class="produto">
+            <img src="https://http2.mlstatic.com/D_NQ_NP_2X_744227-MLU78249092264_082024-F.webp" alt="Xbox 360">
+            <h3>Xbox 360</h3>
+            <p>R$ 1.299,00</p>
+            <button onclick="adicionarAoCarrinho('Xbox 360', 1299.00)">Adicionar ao Carrinho</button>
+        </div>
+        <div class="produto">
+            <img src="https://m.media-amazon.com/images/I/61iy7b0-r6L._AC_UL480_FMwebp_QL65_.jpg" alt="Atari Flashback 12 Gold">
+            <h3>Atari Flashback 12 Gold</h3>
+            <p>R$ 1.995,95</p>
+            <button onclick="adicionarAoCarrinho('Atari Flashback 12 Gold', 1995.95)">Adicionar ao Carrinho</button>
+        </div>
+        <div class="produto">
+            <img src="https://http2.mlstatic.com/D_Q_NP_2X_923834-MLB83154342338_032025-E-ps3-playstation-3-45-jogos-2-controles-garantia-nf-e-gta5-fifa-minecraft-pes-god-of-war-the-last-of-us-mortal-komkat-need-for-speed.webp" alt="PlayStation 3">
+            <h3>PlayStation 3</h3>
+            <p>R$ 1.244,98</p>
+            <button onclick="adicionarAoCarrinho('PlayStation 3', 1244.98)">Adicionar ao Carrinho</button>
+        </div>
+    </section>
+
+    <!-- Carrinho de Compras -->
+    <section class="carrinho">
+        <h3>Carrinho de Compras</h3>
+        <ul id="listaCarrinho">
+            <li><em>Seu carrinho está vazio.</em></li>
+        </ul>
+        <div class="total">Total: R$ 0,00</div>
+        <button onclick="finalizarCompra()">Finalizar Compra</button>
+    </section>
+
+    <script>
+        let carrinho = [];
+        let totalCarrinho = 0;
+
+        // Função para adicionar produto ao carrinho
+        function adicionarAoCarrinho(nome, preco) {
+            carrinho.push({ nome, preco });
+            totalCarrinho += preco;
+            atualizarCarrinho();
+        }
+
+        // Função para atualizar o carrinho
+        function atualizarCarrinho() {
+            const listaCarrinho = document.getElementById('listaCarrinho');
+            const total = document.querySelector('.total');
+
+            listaCarrinho.innerHTML = '';
+            if (carrinho.length === 0) {
+                listaCarrinho.innerHTML = '<li><em>Seu carrinho está vazio.</em></li>';
+            } else {
+                carrinho.forEach(produto => {
+                    const item = document.createElement('li');
+                    item.textContent = `${produto.nome} - R$ ${produto.preco.toFixed(2)}`;
+                    listaCarrinho.appendChild(item);
+                });
+            }
+
+            total.textContent = `Total: R$ ${totalCarrinho.toFixed(2)}`;
+        }
+
+        // Função para finalizar a compra
+        function finalizarCompra() {
+            if (carrinho.length === 0) {
+                alert('Seu carrinho está vazio!');
+                return;
+            }
+
+            alert('Compra finalizada com sucesso!');
+            carrinho = [];
+            totalCarrinho = 0;
+            atualizarCarrinho();
+        }
+    </script>
+
+</body>
+</html>
+</form>
+</section>
+
+<footer>
+    <p>&copy; 2025 Loja de Video Games. Todos os direitos reservados.</p>
+</footer>
+
+</body>
+</html>
